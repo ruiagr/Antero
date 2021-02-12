@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+%usepackage[utf8]{latin}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{cancel}
+\usepackage{amsmath}
+
+
+\newcommand{\cancelraizq}[1]{
+\sbox0{displaystyle \sqrt{vphantom{#1^{\cancel{2}}}}\)}
+\cancel{\phantom{\usebox0}\hspace{0.5em}}
+\hspace{\dimexpr(-\wd0-0.5em)}
+\sqrt{#1^{\cancel{2}}}
+}
+\DeclareDocumentCommand{\CancelRaizes}{o m o}
+{
+\IfNoValueIf{#3}
+{         
+         \IfNoValueIf{#1}
+         {
+        %\renewcommand{\CancelColor}{\color{#3}}
+         {\sbox0{displaystyle \sqrt{vphantom{#2^{\cancel{2}}}}\)}
+           \cancel{\phantom{\usebox0}\hspace{0.5em}}
+            \hspace{\dimexpr(-\wd0-0.5em)}
+             \sqrt{#2^{\cancel{2}}}
+           }
+           
+         {
+         
+      %  \renewcommand{\CancelColor}{\color{#3}}
+          {\sbox0{displaystyle \sqrt[#1]{vphantom{#2^{\cancel{#1}}}}\)}
+           \cancel{\phantom{\usebox0}\hspace{0.5em}}
+            \hspace{\dimexpr(-\wd0-0.5em)}
+             \sqrt[#1]{#2^{\cancel{2}}}
+           }
+{
+}         
+           
+         {\IfNoValueIf{#1}
+         {
+        \renewcommand{\CancelColor}{\color{#3}}
+         {\sbox0{displaystyle \sqrt{vphantom{#2^{\cancel{2}}}}\)}
+           \cancel{\phantom{\usebox0}\hspace{0.5em}}
+            \hspace{\dimexpr(-\wd0-0.5em)}
+             \sqrt{#2^{\cancel{2}}}
+           }
+           
+         {
+         
+        \renewcommand{\CancelColor}{\color{#3}}
+         {\sbox0{displaystyle \sqrt[#1]{vphantom{#2^{\cancel{#1}}}}\)}
+           \cancel{\phantom{\usebox0}\hspace{0.5em}}
+            \hspace{\dimexpr(-\wd0-0.5em)}
+             \sqrt[#1]{#2^{\cancel{2}}}
+           }
+         
+}
+
+ } 
+
+
+\begin{document}
+
+
+\section{Introduction}
+
+\end{document}

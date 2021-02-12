@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+%usepackage[utf8]{latin}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{cancel}
+\usepackage{amsmath}
+\newcommand{\cancelraizq}[1]{
+\sbox0{displaystyle \sqrt{vphantom{#1^{\cancel{2}}}}\)}
+\cancel{\phantom{\usebox0}\hspace{0.5em}
+\hspace{\dimexpr(- \wd0 - 0.5em)}
+\sqrt{#1^{\cancel{2}}}
+}
+
+\begin{document}
+
+\section{Introduction}
+lllllll
+\end{document}
